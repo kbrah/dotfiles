@@ -1,0 +1,29 @@
+{
+    "translate": {
+        "prefix": "trans",
+        "body": [
+            "const { t } = useTranslate($1)"
+        ]
+    },
+    "rfc": {
+        "prefix": "rfc",
+        "body": [
+            "const $1 = () => {",
+            "return <>$2</>;",
+            "}",
+            "export default $1"
+        ]
+    },
+    "dispatch": {
+        "prefix": "dispatch",
+        "body": [
+            "const dispatch = useAppDispatch();"
+        ]
+    },
+    "select": {
+        "prefix": "select",
+        "body": [
+            "const $1 = useAppSelector(state => $2);"
+        ]
+    }
+}
