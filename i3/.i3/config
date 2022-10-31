@@ -26,7 +26,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # start a browser
 bindsym $mod+Shift+Return exec "chromium --ignore-gpu-blacklist --enable-gpu-rasterization --enable-zero-copy --enable-features=VaapiVideoDecoder --use-gl=desktop --disable-features=UseChromeOSDirectVideoDecoder"
