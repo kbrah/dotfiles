@@ -15,6 +15,7 @@ lvim.colorscheme = "onedarker"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.relativenumber = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -45,6 +46,7 @@ lvim.keys.normal_mode["<C-3"] = function() require('harpoon.ui').nav_file(3) end
 
 vim.g.wiki_root = '~/notes'
 vim.opt.shell = "/bin/sh"
+
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -84,7 +86,6 @@ vim.opt.shell = "/bin/sh"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -158,7 +159,7 @@ formatters.setup {
     -- { command = "isort", filetypes = { "python" } },
     {
         -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-        command = "prettier_d_slim",
+        command = "prettier",
         ---@usage arguments to pass to the formatter
         -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
         extra_args = { "--print-with", "100" },
@@ -172,14 +173,14 @@ formatters.setup {
     }
 }
 
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---     {
---         exe = "eslint_d",
---         extra_args = { "--cache" },
---         filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
---     }
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+    {
+        exe = "eslint",
+        extra_args = { "--cache" },
+        filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+    }
+}
 -- Additional Plugins
 lvim.plugins = {
     "ggandor/lightspeed.nvim",
