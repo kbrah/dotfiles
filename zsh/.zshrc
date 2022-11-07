@@ -104,3 +104,4 @@ export FZF_COMPLETION_TRIGGER='xx'
 zstyle ':autocomplete:*' fzf-completion yes
 
 . ~/z.sh
+source /usr/share/nvm/init-nvm.sh

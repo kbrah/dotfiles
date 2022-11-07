@@ -51,6 +51,33 @@ require("formatter").setup({
 		javascriptreact = {
 			require("formatter.filetypes.javascriptreact").prettier,
 		},
+		svelte = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+						"--plugin-search-dir=.",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		astro = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+						"--plugin-search-dir=.",
+					},
+					stdin = true,
+					try_node_modules = true,
+				}
+			end,
+		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype

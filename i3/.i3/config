@@ -29,8 +29,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start a browser
-#bindsym $mod+Shift+Return exec "chromium --ignore-gpu-blacklist --enable-gpu-rasterization --enable-zero-copy --enable-features=VaapiVideoDecoder --use-gl=desktop --disable-features=UseChromeOSDirectVideoDecoder"
-bindsym $mod+Shift+Return exec brave
+bindsym $mod+Shift+Return exec "chromium --ignore-gpu-blacklist --enable-gpu-rasterization --enable-zero-copy --enable-features=VaapiVideoDecoder --use-gl=desktop --disable-features=UseChromeOSDirectVideoDecoder"
 
 # kill focused window
 bindsym $mod+Shift+q kill

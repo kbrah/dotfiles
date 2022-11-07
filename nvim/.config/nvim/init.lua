@@ -1,5 +1,3 @@
 require("lasse.set")
-require("lasse.packer")
+require("lasse.plugins")
 -- Lua
-vim.cmd([[colorscheme tokyonight]])
-vim.cmd([[highlight LineNr guifg=yellow]])
