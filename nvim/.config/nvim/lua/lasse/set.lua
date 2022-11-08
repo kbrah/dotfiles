@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.opt.nu = false
+vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.signcolumn = "yes"
@@ -15,19 +15,12 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.undofile = true
 
--- COPY PASTE
-
-vim.keymap.set("n", "<leader>p", '"+p', {})
-vim.keymap.set("v", "<leader>y", '"+y', {})
-vim.keymap.set("n", "<leader>P", '"+P', {})
-vim.keymap.set("v", "<leader>Y", '"+Y', {})
-
 -- NAVIGATION
 
-vim.keymap.set("n", "<C-h>", "<C-w>h", {})
-vim.keymap.set("n", "<C-j>", "<C-w>j", {})
-vim.keymap.set("n", "<C-k>", "<C-w>k", {})
-vim.keymap.set("n", "<C-l>", "<C-w>l", {})
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", {})
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", {})
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", {})
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
@@ -73,9 +66,9 @@ end, {})
 vim.keymap.set("n", "<leader>gg", function()
 	vim.api.nvim_command("LazyGit")
 end, {})
-vim.keymap.set("n", "<leader>cd", function()
-	vim.api.nvim_command("Gcd")
-end, {})
+-- vim.keymap.set("n", "<leader>cd", function()
+-- 	vim.api.nvim_command("Gcd")
+-- end, {})
 
 -- NVIM-TREE
 vim.g.loaded_netrw = 1
@@ -85,7 +78,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+	},
+})
 vim.keymap.set("n", "<leader>e", require("nvim-tree").toggle, {})
 
 function _G.ReloadConfig()
