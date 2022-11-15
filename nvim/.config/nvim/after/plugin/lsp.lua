@@ -66,7 +66,7 @@ cmp.setup({
 })
 local tabnine = require("cmp_tabnine.config")
 
-tabnine.setup({
+tabnine:setup({
 	max_lines = 1000,
 	max_num_results = 20,
 	sort = true,
@@ -131,6 +131,12 @@ lsp.svelte.setup({
 	on_attach = on_attach,
 })
 lsp.rust_analyzer.setup({
+	on_attach = on_attach,
+})
+lsp.csharp_ls.setup({
+	on_attach = on_attach,
+})
+lsp.pylsp.setup({
 	on_attach = on_attach,
 })
 lsp.sumneko_lua.setup({
