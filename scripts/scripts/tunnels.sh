@@ -18,6 +18,8 @@ sudo ssh f158783@172.17.0.12 -L 4002:psrvfwfimkeh01.palvelu.verkko:80  \
   -L 4021:psrvfwtute1.palvelu.verkko:3389 \
   -L 4022:psrvfwtute2.palvelu.verkko:3389 \
   -L 4023:psrvfwlsktut01.palvelu.verkko:3389 \
+  -L psrvfwesbctst1.palvelu.verkko:3389:psrvfwesbctst1.palvelu.verkko:3389 \
+  -L psrvfwesbctst2.palvelu.verkko:3389:psrvfwesbctst2.palvelu.verkko:3389 \
   -L 4030:psrvfwesb.palvelu.verkko:3389 \
   -L 4031:psrvfwesb01.palvelu.verkko:3389 \
   -L 4032:psrvfwesb02.palvelu.verkko:3389 \
