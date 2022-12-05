@@ -40,16 +40,22 @@ require("formatter").setup({
 		},
 
 		typescriptreact = {
-			require("formatter.filetypes.typescriptreact").prettier,
+			function()
+				return {
+					exe = "prettierd",
+					args = { "--stdin-filepath", util.escape_path(util.get_current_buffer_file_path()) },
+					stdin = true,
+				}
+			end,
 		},
 		typescript = {
-			require("formatter.filetypes.typescript").prettier,
+			require("formatter.filetypes.typescript").prettierd,
 		},
 		javascript = {
-			require("formatter.filetypes.javascript").prettier,
+			require("formatter.filetypes.javascript").prettierd,
 		},
 		javascriptreact = {
-			require("formatter.filetypes.javascriptreact").prettier,
+			require("formatter.filetypes.javascriptreact").prettierd,
 		},
 		svelte = {
 			function()
@@ -76,6 +82,11 @@ require("formatter").setup({
 					stdin = true,
 					try_node_modules = true,
 				}
+			end,
+		},
+		cs = {
+			function()
+				vim.lsp.buf.format()
 			end,
 		},
 

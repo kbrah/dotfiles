@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-sudo ssh f158783@172.17.0.12 -L 4002:psrvfwfimkeh01.palvelu.verkko:80  \
+sudo ssh f158783@172.17.0.12 -L psrvfwfimkeh01.palvelu.verkko:80:psrvfwfimkeh01.palvelu.verkko:80  \
   -L 10001:fimtestensemble.tays.fi:57772 \
   -L 1451:psrvfwsql4clu3.palvelu.verkko:1451 \
   -L 1446:masslabontesti.palvelu.verkko:1446 \

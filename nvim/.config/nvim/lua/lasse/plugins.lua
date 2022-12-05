@@ -39,6 +39,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/vim-vsnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use("onsails/lspkind.nvim")
 	use("folke/tokyonight.nvim")
@@ -50,6 +52,14 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("napmn/react-extract.nvim")
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
@@ -60,9 +70,11 @@ return packer.startup(function(use)
 				opleader = {
 					line = "<leader>/",
 				},
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 			})
 		end,
 	})
+	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {

@@ -26,3 +26,6 @@ vnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
 
 nnoremap("<leader>c", ":bdelete<CR>")
+
+vnoremap("<leader>re", require("react-extract").extract_to_new_file)
+vnoremap("<leader>rc", require("react-extract").extract_to_current_file)

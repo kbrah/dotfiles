@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.opt.swapfile = false;
+vim.opt.swapfile = false
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -25,16 +25,16 @@ vim.opt.undofile = true
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<leader>st", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>fc", function()
+vim.keymap.set("n", "<leader>sb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>sc", function()
 	builtin.find_files({
 		cwd = "~/.config/nvim",
 	})
 end, {})
-vim.keymap.set("n", "<leader>fp", function()
+vim.keymap.set("n", "<leader>sp", function()
 	builtin.find_files({
 		cwd = "~/Code/lab20",
 	})
