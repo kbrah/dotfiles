@@ -1,0 +1,131 @@
+{
+   "checksum": "c739462686c2f7eebca4a41c49b05449",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13314886891481033",
+            "date_last_used": "13315318140471854",
+            "guid": "be77f202-87ea-4abe-8ab8-95387000db93",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "kehi",
+            "type": "url",
+            "url": "http://psrvfwfimkeh01.palvelu.verkko/loginappinternal/?returnUrl=http://psrvfwfimkeh01.palvelu.verkko/portal20/"
+         }, {
+            "date_added": "13315317101585018",
+            "date_last_used": "0",
+            "guid": "6130a8f2-f64f-4778-b4ce-1e7859c5cd78",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "nightly",
+            "type": "url",
+            "url": "https://nightlyportaali.fimlabpalvelu.fi/loginappinternal/?returnUrl=https://nightlyportaali.fimlabpalvelu.fi/portal20/"
+         }, {
+            "date_added": "13314887038098532",
+            "date_last_used": "13315305730890925",
+            "guid": "b7f72f22-1697-438d-96f7-40e4e73c119e",
+            "id": "6",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "azure",
+            "type": "url",
+            "url": "https://dev.azure.com/Fimlab/Fimlab/_boards/board/t/Fimlab-Ydintiimi/Stories"
+         }, {
+            "date_added": "13314887236556404",
+            "date_last_used": "13315314952197876",
+            "guid": "e69430bc-76d4-4415-aec5-5e30fe79ea01",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Bitbucket",
+            "type": "url",
+            "url": "http://psrvfwjenkins.palvelu.verkko:7990/"
+         }, {
+            "date_added": "13315314849235733",
+            "date_last_used": "0",
+            "guid": "9be57d22-3df1-4c95-96ba-fa50b7875b3c",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Octopus",
+            "type": "url",
+            "url": "http://localhost:82/octopus/app#/users/sign-in"
+         }, {
+            "date_added": "13315315370136524",
+            "date_last_used": "0",
+            "guid": "170f2e40-295f-46ed-af46-d08ea2913733",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Jenkins",
+            "type": "url",
+            "url": "http://localhost:8085/"
+         }, {
+            "children": [ {
+               "children": [  ],
+               "date_added": "13315392798914249",
+               "date_last_used": "0",
+               "date_modified": "13315392798914249",
+               "guid": "da2b1821-d231-4c9f-9074-7c4236857901",
+               "id": "14",
+               "name": "New folder",
+               "type": "folder"
+            }, {
+               "date_added": "13315392753535577",
+               "date_last_used": "0",
+               "guid": "2c883fa1-7b91-4237-854c-8c275af2299c",
+               "id": "12",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "lab20webapi",
+               "type": "url",
+               "url": "http://psrvfwfimkeh01.palvelu.verkko/lab20webapi/swagger/ui/index#/"
+            } ],
+            "date_added": "13315392798913688",
+            "date_last_used": "0",
+            "date_modified": "13315392800533857",
+            "guid": "db9a91ee-30a6-46fc-9bad-874fddcaaa07",
+            "id": "13",
+            "name": "API",
+            "type": "folder"
+         } ],
+         "date_added": "13314885043537922",
+         "date_last_used": "0",
+         "date_modified": "13315392753535588",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13314885043537925",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13314885043537926",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

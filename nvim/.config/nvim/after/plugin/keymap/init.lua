@@ -5,6 +5,10 @@ local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
+-- console.log macro
+nnoremap("<leader>o", 'oconsole.log()<esc>i')
+nnoremap("<leader>O", 'Oconsole.log()<esc>i')
+
 vnoremap("K", ":m '<-2<CR>gv=gv")
 vnoremap("J", ":m '>+1<CR>gv=gv")
 
