@@ -1,7 +1,7 @@
 window:
   opacity: 1
 font:
-  size: 8.5
+  size: 7.5
   normal:
     family: "Source Code Pro"
 env:

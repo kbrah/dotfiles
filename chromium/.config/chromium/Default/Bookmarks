@@ -1,5 +1,5 @@
 {
-   "checksum": "c739462686c2f7eebca4a41c49b05449",
+   "checksum": "f6c5778e4b82332a8d708419c04e2149",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -70,15 +70,6 @@
             "url": "http://localhost:8085/"
          }, {
             "children": [ {
-               "children": [  ],
-               "date_added": "13315392798914249",
-               "date_last_used": "0",
-               "date_modified": "13315392798914249",
-               "guid": "da2b1821-d231-4c9f-9074-7c4236857901",
-               "id": "14",
-               "name": "New folder",
-               "type": "folder"
-            }, {
                "date_added": "13315392753535577",
                "date_last_used": "0",
                "guid": "2c883fa1-7b91-4237-854c-8c275af2299c",
@@ -89,18 +80,40 @@
                "name": "lab20webapi",
                "type": "url",
                "url": "http://psrvfwfimkeh01.palvelu.verkko/lab20webapi/swagger/ui/index#/"
+            }, {
+               "date_added": "13315393286462051",
+               "date_last_used": "0",
+               "guid": "64e3d512-a05a-44ac-a374-1a65f8bc9889",
+               "id": "15",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "RegistryApi",
+               "type": "url",
+               "url": "http://psrvfwfimkeh01.palvelu.verkko/registrywebapi/swagger/index.html"
             } ],
             "date_added": "13315392798913688",
             "date_last_used": "0",
-            "date_modified": "13315392800533857",
+            "date_modified": "13315393286462062",
             "guid": "db9a91ee-30a6-46fc-9bad-874fddcaaa07",
             "id": "13",
             "name": "API",
             "type": "folder"
+         }, {
+            "date_added": "13315393776762458",
+            "date_last_used": "0",
+            "guid": "adaf55c2-1ce5-4390-875e-c4aef24106fe",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Stow",
+            "type": "url",
+            "url": "https://www.gnu.org/software/stow/manual/stow.html#Invoking-Stow"
          } ],
          "date_added": "13314885043537922",
          "date_last_used": "0",
-         "date_modified": "13315392753535588",
+         "date_modified": "13315393776762468",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",

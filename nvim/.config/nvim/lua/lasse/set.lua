@@ -6,9 +6,9 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.signcolumn = "yes"
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -25,6 +25,12 @@ vim.opt.undofile = true
 -- vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 
 -- TELESCOPE
+require("telescope").setup({
+	fzf = {
+		fuzzy = true,
+	},
+})
+require("telescope").load_extension("fzf")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 vim.keymap.set("n", "<leader>st", builtin.live_grep, {})
@@ -87,28 +93,3 @@ require("nvim-tree").setup({
 	},
 })
 vim.keymap.set("n", "<leader>e", require("nvim-tree").toggle, {})
-
-function _G.ReloadConfig()
-	local hls_status = vim.v.hlsearch
-	for name, _ in pairs(package.loaded) do
-		if name:match("^lasse") then
-			require("plenary.reload").reload_module(name)
-			--            package.loaded[name] = nil
-		end
-	end
-	dofile(vim.env.MYVIMRC)
-	if hls_status == 0 then
-		vim.opt.hlsearch = false
-	end
-end
-
-vim.api.nvim_set_keymap("n", "<leader>vs", "<Cmd>lua ReloadConfig()<CR>", { silent = true, noremap = true })
-vim.cmd("command! ReloadConfig lua ReloadConfig()")
-
--- Autosync plugins on packer file save
-local configReloadGroup = vim.api.nvim_create_augroup("ConfigAutogroup", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-	command = "ReloadConfig",
-	pattern = "*/nvim/**/*.lua",
-	group = configReloadGroup,
-})

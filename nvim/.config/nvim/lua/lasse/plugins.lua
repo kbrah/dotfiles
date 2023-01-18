@@ -1,6 +1,5 @@
 local fn = vim.fn
 
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -25,7 +24,21 @@ return packer.startup(function(use)
 		branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	use("theHamsta/nvim-dap-virtual-text")
+	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("neovim/nvim-lspconfig")
+	use("mfussenegger/nvim-dap")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim

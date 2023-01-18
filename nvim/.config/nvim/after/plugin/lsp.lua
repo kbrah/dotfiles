@@ -66,10 +66,8 @@ cmp.setup({
 	sources = {
 		-- tabnine completion? yayaya
 
-		{ name = "cmp_tabnine" },
-
 		{ name = "nvim_lsp" },
-
+		{ name = "cmp_tabnine" },
 		-- For vsnip user.
 		-- { name = 'vsnip' },
 
@@ -137,7 +135,7 @@ lsp.tsserver.setup({
 	on_attach = on_attach,
 	init_options = {
 		hostinfo = "neovim",
-		maxTSServerMemory = 8192,
+		maxTSServerMemory = 16384,
 	},
 	cmd = { "typescript-language-server", "--stdio" },
 })
@@ -154,6 +152,11 @@ lsp.svelte.setup({
 })
 lsp.rust_analyzer.setup({
 	on_attach = on_attach,
+})
+
+require("lspconfig").cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 -- lsp.csharp_ls.setup({
 -- 	on_attach = on_attach,
@@ -200,6 +203,7 @@ lsp.omnisharp.setup({
 lsp.pylsp.setup({
 	on_attach = on_attach,
 })
+
 lsp.sumneko_lua.setup({
 	on_attach = on_attach,
 	settings = {

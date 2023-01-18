@@ -54,7 +54,7 @@ sudo ssh f158783@172.17.0.12 -L psrvfwfimkeh01.palvelu.verkko:80:psrvfwfimkeh01.
   -L 8085:psrvfljenkins01.tays.fi:8080 \
   -L 81:psrvfwjenkins.palvelu.verkko:81 \
   -L 82:psrvfwjenkins.palvelu.verkko:82 \
-  -L 9000:psrvfwjenkins.palvelu.verkko:9000 \
+  -L 9000:psrvfljenkins01.tays.fi:9000 \
   -L tiketti.fimlab.fi:80:tiketti.fimlab.fi:80 \
   -L tiketti.fimlab.fi:443:tiketti.fimlab.fi:443 \
   -L projektit.fimlab.fi:80:projektit.fimlab.fi:80 \

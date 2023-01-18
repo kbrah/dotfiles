@@ -99,9 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source /usr/share/nvm/init-nvm.sh
 source $HOME/.zsh_profile
 export FZF_COMPLETION_TRIGGER='xx'
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
 
 zstyle ':autocomplete:*' fzf-completion yes
 
