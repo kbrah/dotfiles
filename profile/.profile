@@ -5,9 +5,10 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export BROWSER=/usr/bin/firefox
 export TERMINAL=/usr/bin/alacritty
 
-export PATH="${PATH}:$HOME/.dotnet/tools:$HOME/.cargo/bin:$HOME/.local/share/neovim/bin"
+export PATH="${PATH}:$HOME/.dotnet/tools:$HOME/.cargo/bin:$HOME/.local/share/neovim/bin:$HOME/.local/bin"
 
 export LIBVA_DRIVER_NAME=iHD
 export VDPAU_DRIVER=va_gl
 
 export SUDO_ASKPASS="$HOME/.local/bin/dpass"
+export SQLPATH="$HOME"

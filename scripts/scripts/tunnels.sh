@@ -9,8 +9,8 @@ sudo ssh f158783@172.17.0.12 -L psrvfwfimkeh01.palvelu.verkko:80:psrvfwfimkeh01.
   -L 1521:psrvflora10x-vip.tays.fi:1521 \
   -L 1522:psrvflrac4x-vip.tays.fi:1521 \
   -L 4001:psrvfwfimkeh01.palvelu.verkko:3389 \
-  -L 4002:psrvfwfimkeh01.palvelu.verkko:80 \
-  -L 4003:psrvfwfimkeh01.palvelu.verkko:443 \
+  -L psrvfwfimkeh01.palvelu.verkko:80:psrvfwfimkeh01.palvelu.verkko:80 \
+  -L psrvfwfimkeh01.palvelu.verkko:443:psrvfwfimkeh01.palvelu.verkko:443 \
   -L 4011:psrvfwlaketest.palvelu.verkko:3389 \
   -L 4012:psrvfwlaketest2.palvelu.verkko:3389 \
   -L 4013:psrvwlasktst.palvelu.verkko:3389 \
@@ -45,6 +45,8 @@ sudo ssh f158783@172.17.0.12 -L psrvfwfimkeh01.palvelu.verkko:80:psrvfwfimkeh01.
   -L 6002:psrvflwebtest.tays.fi:443 \
   -L portaalitesti.fimlabpalvelu.fi:80:portaalitesti.fimlabpalvelu.fi:80 \
   -L portaalitesti.fimlabpalvelu.fi:443:portaalitesti.fimlabpalvelu.fi:443 \
+  -L logintesti.fimlab.fi:80:logintesti.fimlab.fi:80 \
+  -L logintesti.fimlab.fi:443:logintesti.fimlab.fi:443 \
   -L nightlyportaali.fimlabpalvelu.fi:80:nightlyportaali.fimlabpalvelu.fi:80 \
   -L nightlyportaali.fimlabpalvelu.fi:443:nightlyportaali.fimlabpalvelu.fi:443 \
   -L 7001:psrvfwjenkins.palvelu.verkko:3389 \

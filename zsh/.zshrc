@@ -109,3 +109,8 @@ zstyle ':autocomplete:*' fzf-completion yes
 
 . ~/z.sh
 # source /usr/share/nvm/init-nvm.sh
+
+# pnpm
+export PNPM_HOME="/home/lasse/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
