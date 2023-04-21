@@ -9,7 +9,7 @@ case "$chosen" in
   home)
     autorandr --load docked-home ;;
   work)
-    xrandr --output DP-1-2 --pos 1920x0;    # shift it back
-    xrandr --output DP-1-2 --pos 1921x0;    # shift one pixel
-    autorandr --load docked-work ;;
+    xrandr --output eDP-1 --mode "1920x1080" 
+    xrandr --output DP-1-3 --mode auto --left-of eDP-1 
+    xrandr --output DP-1-3 --mode auto --primary --left-of DP-1-3
 esac
