@@ -107,10 +107,12 @@ export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 zstyle ':autocomplete:*' fzf-completion yes
 
-. ~/z.sh
+# . ~/z.sh
 # source /usr/share/nvm/init-nvm.sh
 
 # pnpm
 export PNPM_HOME="/home/lasse/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(zoxide init zsh)"
