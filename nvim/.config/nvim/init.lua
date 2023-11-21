@@ -1,3 +1,1 @@
-require("lasse.set")
-require("lasse.plugins")
--- Lua
+../../dotfiles/nvim/.config/nvim/init.lua
