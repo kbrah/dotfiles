@@ -11,8 +11,8 @@
 # see this wiki page for information:
 #  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
 #
-# sudo yabai --load-sa
-# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 #!/usr/bin/env sh
 
@@ -20,7 +20,6 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 yabai -m config layout bsp
-yabai -m config external_bar all:0:26
 
 # bar settings
 
@@ -56,7 +55,12 @@ yabai -m config top_padding		     3
 # float system preferences
 yabai -m rule --add app='^System Information$' manage=off
 yabai -m rule --add app='^System Preferences$' manage=off
+yabai -m rule --add app='^System Settings$' manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^Bitwarden$' manage=off
+
+
+yabai -m rule --add app='^Simulator$' manage=off
 
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
