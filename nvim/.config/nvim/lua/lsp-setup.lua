@@ -74,6 +74,7 @@ local servers = {
   tsserver = {
     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }
   },
+  clojure_lsp = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
