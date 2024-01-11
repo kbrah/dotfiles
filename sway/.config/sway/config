@@ -198,6 +198,9 @@ input 7504:24926:Adv360_Pro_Keyboard {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+for_window [app_id="firefox"] border none
+
 #
 # Resizing containers:
 #
