@@ -1,10 +1,28 @@
 -- [[ Basic Keymaps ]]
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+keymap("x", "p", [["_dP"]], opts)
+
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+keymap("n", "*", "*zz", opts)
+keymap("n", "#", "#zz", opts)
+keymap("n", "g*", "g*zz", opts)
+keymap("n", "g#", "g#zz", opts)
+
+-- stay in indent mode
+keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)
+
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 --
 --
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
