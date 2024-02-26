@@ -3,8 +3,11 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
-vim.g.clojure_align_subforms = 1;
+vim.g.clojure_align_subforms = 1
 
+vim.cmd [[
+  let g:conjure#client#sql#stdio#command = "just psql-dev"
+]]
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -21,6 +24,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -32,25 +36,35 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-
+  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
   'prettier/vim-prettier',
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'mcchrish/zenbones.nvim',
+    enabled = false,
+    dependencies = {
+      'rktjmp/lush.nvim',
+    },
+    config = function()
+      vim.cmd.colorscheme 'zenbones'
+    end,
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
+      require('catppuccin').setup {
         integrations = {
-          harpoon = true
-        }
-      })
+          harpoon = true,
+        },
+      }
       vim.cmd.colorscheme 'catppuccin'
 
-      local ns = vim.api.nvim_create_namespace("LineNr")
-      vim.api.nvim_set_hl(ns, "LineNr", { bg = "none", fg = "#ffffff" })
+      local ns = vim.api.nvim_create_namespace 'LineNr'
+      vim.api.nvim_set_hl(ns, 'LineNr', { bg = 'none', fg = '#ffffff' })
       -- vim.api.nvim_set_hl(ns, "colorcolumn", { bg = "#1d202d" })
       vim.api.nvim_set_hl_ns(ns)
-    end
+    end,
   },
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -64,6 +78,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -91,7 +106,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -130,21 +145,68 @@ require('lazy').setup({
       end,
     },
   },
-
+  -- -- lua
+  -- {
+  --   {
+  --     'linrongbin16/lsp-progress.nvim',
+  --     config = function()
+  --       require('lsp-progress').setup()
+  --     end,
+  --   },
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
+    config = function()
+      vim.api.nvim_create_augroup('lualine_augroup', { clear = true })
+      vim.api.nvim_create_autocmd('User', {
+        group = 'lualine_augroup',
+        pattern = 'LspProgressStatusUpdated',
+        callback = require('lualine').refresh,
+      })
+      require('lualine').setup {
+        options = {
+          icons_enabled = true,
+          theme = 'auto',
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          disabled_filetypes = {
+            statusline = {},
+            winbar = {},
+          },
+          ignore_focus = {},
+          always_divide_middle = true,
+          globalstatus = false,
+          refresh = {
+            statusline = 1000,
+            tabline = 1000,
+            winbar = 1000,
+          },
+        },
+        sections = {
+          lualine_a = {},
+          lualine_b = { 'branch' },
+          lualine_c = { { 'filename', path = 1 } },
+          lualine_x = {},
+          lualine_y = { 'filetype' },
+          lualine_z = {},
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = {},
+      }
+    end,
     -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'catppuccin',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
   },
-
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -178,7 +240,6 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.

@@ -19,9 +19,9 @@ return {
 				telescope = {
 					mappings = {
 						default = yanky_telescope_mapping.put("P"),
-						i = {
-							["<c-p>"] = yanky_telescope_mapping.put("p"),
-						},
+						-- i = {
+						-- 	["<c-p>"] = yanky_telescope_mapping.put("p"),
+						-- },
 						n = {
 							p = yanky_telescope_mapping.put("p"),
 							P = yanky_telescope_mapping.put("P"),

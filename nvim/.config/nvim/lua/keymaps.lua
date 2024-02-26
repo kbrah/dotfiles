@@ -2,7 +2,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-keymap("x", "p", [["_dP"]], opts)
+keymap("x", "p", [["_dP]], opts)
 
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
@@ -16,6 +16,11 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
 
+keymap("n", "<leader>db", "<cmd>DBUIToggle<cr>", opts)
+
+keymap('n', '<leader>lr', "<cmd>ConjureEval (user/reload-server)<cr>", opts)
+keymap('n', '<leader>ls', "<cmd>ConjureEval (user/start-server)<cr>", opts)
+keymap('n', '<leader>lx', "<cmd>ConjureEval (user/stop-server)<cr>", opts)
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 --

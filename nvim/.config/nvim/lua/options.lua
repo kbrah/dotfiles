@@ -10,6 +10,8 @@ vim.wo.number = true
 
 vim.o.swapfile = false
 
+vim.o.nowrap = true
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
