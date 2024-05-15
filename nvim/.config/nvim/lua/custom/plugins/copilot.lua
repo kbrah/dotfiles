@@ -4,14 +4,19 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		branch = "canary",
 		opts = {
 			show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
-			debug = false,    -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+			debug = true,    -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
 			disable_extra_info = 'no', -- Disable extra information (e.g: system prompt) in the response.
 		},
 		build = function()
 			vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
 		end,
+		dependencies = {
+			-- {"zbindenren/nvim-copilot"},
+			{ "nvim-lua/plenary.nvim" },
+		},
 		event = "VeryLazy",
 		keys = {
 			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },

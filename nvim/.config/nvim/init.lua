@@ -24,7 +24,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -35,6 +34,81 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
   -- Git related plugins
   'tpope/vim-fugitive',
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    config = function()
+      -- This module contains a number of default definitions
+      local rainbow_delimiters = require 'rainbow-delimiters'
+
+      ---@type rainbow_delimiters.config
+      vim.g.rainbow_delimiters = {
+        strategy = {
+          [''] = rainbow_delimiters.strategy['global'],
+          commonlisp = rainbow_delimiters.strategy['local'],
+        },
+        query = {
+          [''] = 'rainbow-delimiters',
+          lua = 'rainbow-blocks',
+        },
+        priority = {
+          [''] = 110,
+          lua = 210,
+        },
+        highlight = {
+          'RainbowDelimiterRed',
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
+          'RainbowDelimiterOrange',
+          'RainbowDelimiterGreen',
+          'RainbowDelimiterViolet',
+          'RainbowDelimiterCyan',
+        },
+        blacklist = { 'c', 'cpp' },
+      }
+    end,
+  },
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    enabled = false,
+    opts = {},
+    config = function()
+      require('ibl').setup()
+      local highlight = {
+        'RainbowRed',
+        'RainbowYellow',
+        'RainbowBlue',
+        'RainbowOrange',
+        'RainbowGreen',
+        'RainbowViolet',
+        'RainbowCyan',
+      }
+      local hooks = require 'ibl.hooks'
+      -- create the highlight groups in the highlight setup hook, so they are reset
+      -- every time the colorscheme changes
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
+        vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
+        vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
+        vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
+        vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
+        vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
+        vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
+      end)
+
+      vim.g.rainbow_delimiters = { highlight = highlight }
+      require('ibl').setup { scope = { highlight = highlight } }
+
+      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+      -- vim.g.indent_blankline_char = "▏"
+      -- vim.g.indent_blankline_filetype_exclude = { "help", "packer" }
+      -- vim.g.indent_blankline_buftype_exclude = { "terminal" }
+      -- vim.g.indent_blankline_show_trailing_blankline_indent = false
+      -- vim.g.indent_blankline_show_first_indent_level = false
+    end,
+  },
+  'tpope/vim-abolish',
   'tpope/vim-rhubarb',
   { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
   'prettier/vim-prettier',
@@ -78,7 +152,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
