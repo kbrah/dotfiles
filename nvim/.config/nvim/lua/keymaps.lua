@@ -25,7 +25,7 @@ keymap('n', '<leader>lx', "<cmd>ConjureEval (user/stop-server)<cr>", opts)
 -- local function open_float()
 --   return "<cmd>lua require('oil').open_float()<cr>"
 -- end
-vim.keymap.set('n', '<leader>e', "<cmd>Neotree float reveal<cr>", { desc = 'Open files' })
+vim.keymap.set('n', '<leader>e', "<cmd>Oil --float<cr>", { desc = 'Open files' })
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 --

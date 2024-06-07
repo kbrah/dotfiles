@@ -1,7 +1,7 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
-  enabled = true,
+  enabled = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -29,7 +29,7 @@ return {
       -- auto_close = true,
       update_focused_file = {
         enable = true,
-        update_cwd = true,
+        -- update_cwd = true,
       },
       -- view = {
       --   width = 30,
