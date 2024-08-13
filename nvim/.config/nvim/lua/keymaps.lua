@@ -22,6 +22,8 @@ keymap('n', '<leader>lr', "<cmd>ConjureEval (user/reload-server)<cr>", opts)
 keymap('n', '<leader>ls', "<cmd>ConjureEval (user/start-server)<cr>", opts)
 keymap('n', '<leader>lx', "<cmd>ConjureEval (user/stop-server)<cr>", opts)
 
+keymap('n', '<leader>cl', "<cmd>ConjureLogToggle<cr>", opts)
+
 -- local function open_float()
 --   return "<cmd>lua require('oil').open_float()<cr>"
 -- end
