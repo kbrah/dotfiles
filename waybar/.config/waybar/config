@@ -5,9 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media" ],
+    "modules-center": ["custom/yip"],
+    "modules-right": ["custom/vpn", "custom/gnma", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -44,32 +44,6 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -87,11 +61,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% CPU",
+        "format": "CPU {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% RAM"
+        "format": "RAM {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -151,17 +125,39 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+	"custom/vpn": {
+		"interval": 2,
+		"format": "{icon} {}",
+		"format-icons": ["🔌"],
+		"exec": "just _prompt-vpn",
+		"on-click": "just vpn-stop"
+	},
+	"custom/yip": {
+		"interval": 5,
+		"return-type": "json",
+		"format": "{}",
+		"exec": "~/yip-status"
+	},
+	"custom/media": {
+		"format": "{icon} {}",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": "",
+			"default": "🎜"
+		},
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+																		   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	},
+	"custom/gnma": {
+		"format": " {} ",
+		"interval": 5,
+		"exec": "flatpak run com.chmouel.gnomeNextMeetingApplet dbus get_event",
+		"exec-if": "pgrep -f gnome-next-meeting-applet",
+		"max-length": 50,
+		"min-length": 1,
+		"on-click": "flatpak run com.chmouel.gnomeNextMeetingApplet dbus open_event_url",
+	}
 }
 

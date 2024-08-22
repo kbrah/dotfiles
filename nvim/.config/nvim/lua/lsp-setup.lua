@@ -44,13 +44,19 @@ local on_attach = function(_, bufnr)
 end
 
 -- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+require('which-key').add {
+  {'<leader>c', group = '[C]ode' },
+  {'<leader>c_', hidden = true },
+  {'<leader>d', name = '[D]ocument'},
+  {'<leader>d_', hidden = true },
+  {'<leader>g', name = '[G]it'},
+  {'<leader>g_', hidden = true },
+  {'<leader>r', name = '[R]ename'},
+  {'<leader>r_', hidden = true },
+  {'<leader>s', name = '[S]earch'},
+  {'<leader>s_', hidden = true },
+  {'<leader>w', name = '[W]orkspace'},
+  {'<leader>w_', hidden = true },
 }
 
 -- mason-lspconfig requires that these setup functions are called in this order

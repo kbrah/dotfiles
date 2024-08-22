@@ -1,5 +1,6 @@
 return {
   'ThePrimeagen/harpoon',
+  -- enabled = false,
   branch = 'harpoon2',
   settings = {
     save_on_toggle = true

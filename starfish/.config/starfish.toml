@@ -1,0 +1,20 @@
+
+command_timeout = 1000
+
+# [aws]
+# disabled = true
+#
+# [container]
+# disabled = true
+#
+# [docker_context]
+# disabled = true
+
+[custom.yleawsvpn]
+when = true
+command = "just -f ~/justfile _prompt-vpn"
+style = "bold red"
+
+# [custom.tunnel]
+# when = true
+# command = "just -f /justfile _prompt-tunnel"
