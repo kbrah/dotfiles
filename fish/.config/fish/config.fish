@@ -12,3 +12,4 @@ bind  -M insert \cf forward-char
 bind  -M normal \cf forward-char
 
 fish_add_path /home/lasse/.local/bin
+~/.local/bin/mise activate fish | source

@@ -15,8 +15,10 @@ return {
   opts = {
     formatters_by_ft = {
       clojure = { 'cljfmt' },
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+      typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+      typescript = { 'prettierd', 'prettier', stop_after_first = true },
       css = { 'prettier' },
       lua = { 'stylua' },
       sql = { 'pg_format' },
