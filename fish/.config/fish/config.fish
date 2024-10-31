@@ -5,6 +5,8 @@ zoxide init fish | source
 starship init fish | source
 
 alias wezterm 'flatpak run org.wezfurlong.wezterm'
+alias lg 'lazygit'
+alias dbeaver 'flatpak run io.dbeaver.DBeaverCommunity'
 
 fish_vi_key_bindings
 

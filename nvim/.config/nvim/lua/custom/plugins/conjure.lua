@@ -9,6 +9,8 @@ return {
     init = function()
       -- local colorize = require('lazyvim.util').has 'baleia.nvim'
       vim.g['conjure#log#strip_ansi_escape_sequences_line_limit'] = 1
+      vim.g['conjure#log#botright'] = true
+      vim.g['conjure#log#hud#width'] = 1.0
 
       -- Disable diagnostics in log buffer and colorize it
       vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
